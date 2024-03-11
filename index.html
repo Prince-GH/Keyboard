@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: rgb(255, 255, 255);
+            
+        }
+        :root{
+            --Border-color:#446575bd;
+            --BG:#38a0ad49;
+            
+        }
+        .container{
+            width: 100%;
+            min-height: 100vh;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgb(36, 36, 36);
+        }
+        .keyboard{
+            width: 1045px;
+            height: auto;
+            /* border: 1px solid black; */
+            display: grid;
+            grid-template-columns:825px 220px;
+            grid-template-rows:auto;
+            gap: 10px;
+        }
+        .key{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background:linear-gradient(124deg,#389fadb4,#0c789963,#18434959,#104b5349 );
+ 
+        }
+        .key:hover{
+            background:linear-gradient(-124deg,#389fadb4,#0c789963,#18434959,#104b5349 );
+            cursor: pointer;
+        }
+
+
+        .left-side{
+            width: 100%;
+            height: 100%;
+            /* border: 1px solid red; */
+
+            & .function-key{
+                width: 1fr;
+                height: 30px;
+                /* border: 1px solid black; */
+            }
+
+            & .numbaric-key,
+              .alpha--1,
+              .alpha--2,
+              .alpha--3,
+              .other-key
+            {
+                width: 1fr;
+                height: 50px;
+                /* border: 1px solid black; */
+            }
+
+            & .function-key{
+                display:grid;
+                grid-template-columns: repeat(auto-fit,46px);
+                grid-template-rows: 25px;
+                gap: 5px;
+                justify-content: space-evenly;
+                align-content: center;
+                & .key-function{
+                    border: 1px solid var(--Border-color);
+                    border-radius: 6.5px;
+                }
+            }
+
+            & .numbaric-key{
+                display:grid;
+                grid-template-columns: repeat(auto-fit,50px) 92px;
+                grid-template-rows:46px;
+                gap: 5px;
+                justify-content: space-evenly;
+                align-content: center;
+                & .key-numbaric{
+                    border: 1px solid var(--Border-color);
+                    border-radius: 6.5px;
+                }
+            }
+
+            & .alpha--1{
+                display:grid;
+                grid-template-columns:80px repeat(auto-fit,50px) 59px;
+                grid-template-rows:46px;
+                gap: 5px;
+                justify-content: space-evenly;
+                align-content: center;
+                & .key-alpha--1{
+                    border: 1px solid var(--Border-color);
+                    border-radius: 6.5px;
+                }
+            }
+            
+            & .alpha--2{
+                display:grid;
+                grid-template-columns:92px repeat(auto-fit,50px) 92px;
+                grid-template-rows:46px;
+                gap: 5px;
+                justify-content: space-evenly;
+                align-content: center;
+                & .key-alpha--2{
+                    border: 1px solid var(--Border-color);
+                    border-radius: 6.5px;
+                }
+            }
+
+            & .alpha--3{
+                display:grid;
+                grid-template-columns:117px repeat(auto-fit,50px) 117px;
+                grid-template-rows:46px;
+                gap: 5px;
+                justify-content: space-evenly;            
+                align-content: center;
+                & .key-alpha--3{
+                    border: 1px solid var(--Border-color);
+                    border-radius: 6.5px;
+                }
+            }
+            & .other-key{
+                display: grid;
+                grid-template-columns:65px repeat(3,50px) 285px repeat(2,50px) 180px;
+                grid-template-rows:46px;
+                gap: 5px;
+                justify-content: space-evenly;
+                align-content: center;
+                & .key-other{
+                    border: 1px solid var(--Border-color);
+                    border-radius: 6.5px;
+                }
+                & .arrow{
+                    display: grid;
+                    grid-template-columns: repeat(3,50px);
+                    grid-template-rows: repeat(2,22px);
+                    row-gap:2px;
+                    column-gap: 6px;
+                    justify-content: center;
+                    align-content: center;
+                    border: none;
+                    & .key-arrow{
+                        border: 1px solid var(--Border-color);
+                        border-radius: 3.5px;
+                    }
+                    & .up{
+                        grid-column: 2/3;
+                        grid-row: 1/2;
+                    }
+                    & .down{
+                        grid-column: 2/3;
+                        grid-row: 2/3;
+                    }
+                    & .left{
+                        grid-column:1/2;
+                        grid-row: 2/3;
+                    }
+                    & .right{
+                        grid-column: 3/4;
+                        grid-row: 2/3;
+                    }
+
+                }
+                
+            }
+            
+        }
+        .right-side{
+            width: 100%;
+            height: 100%;
+            /* border: 1px solid red; */
+            display: grid;
+            grid-template-columns: repeat(4,50px);
+            grid-template-rows:25px repeat(5,46px);
+            gap: 5px;
+
+            & .num--key{
+                border: 1px solid var(--Border-color);
+                border-radius: 6.5px;
+            }
+           
+            & .num--Add{
+                grid-row: 3/5;
+                grid-column: 4/5;
+            }
+            & .num--Enter{
+                grid-row: 5/7;
+                grid-column: 4/5;
+            }
+            & .num--0{
+                grid-column: 1/3;
+                grid-row:6/7; 
+            }
+
+            
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="keyboard">
+            <div class="left-side">
+                <div class="function-key">
+                    <div class="key key-function">Ecs</div>
+                    <div class="key key-function">F1</div>
+                    <div class="key key-function">F2</div>
+                    <div class="key key-function">F3</div>
+                    <div class="key key-function">F4</div>
+                    <div class="key key-function">F5</div>
+                    <div class="key key-function">F6</div>
+                    <div class="key key-function">F7</div>
+                    <div class="key key-function">F8</div>
+                    <div class="key key-function">F9</div>
+                    <div class="key key-function">F10</div>
+                    <div class="key key-function">F11</div>
+                    <div class="key key-function">F12</div>
+                    <div class="key key-function">PrtScr</div>
+                    <div class="key key-function">Insert</div>
+                    <div class="key key-function">Delete</div>
+                </div>
+                <div class="numbaric-key">
+                    <div class="key key-numbaric">~<br>`</div>
+                    <div class="key key-numbaric">!<br>1</div>
+                    <div class="key key-numbaric">@<br>2</div>
+                    <div class="key key-numbaric">#<br>3</div>
+                    <div class="key key-numbaric">$<br>4</div>
+                    <div class="key key-numbaric">%<br>5</div>
+                    <div class="key key-numbaric">^<br>6</div>
+                    <div class="key key-numbaric">&<br>7</div>
+                    <div class="key key-numbaric">*<br>8</div>
+                    <div class="key key-numbaric">(<br>9</div>
+                    <div class="key key-numbaric">)<br>0</div>
+                    <div class="key key-numbaric">_<br>-</div>
+                    <div class="key key-numbaric">+<br>=</div>
+                    <div class="key key-numbaric backspace">Backspace</div>
+                </div>
+                <div class="alpha--1">
+                    <div class="key key-alpha--1 tab">Tab</div>
+                    <div class="key key-alpha--1 ">Q</div>
+                    <div class="key key-alpha--1 ">W</div>
+                    <div class="key key-alpha--1 ">E</div>
+                    <div class="key key-alpha--1 ">R</div>
+                    <div class="key key-alpha--1 ">T</div>
+                    <div class="key key-alpha--1 ">Y</div>
+                    <div class="key key-alpha--1 ">U</div>
+                    <div class="key key-alpha--1 ">I</div>
+                    <div class="key key-alpha--1 ">O</div>
+                    <div class="key key-alpha--1 ">P</div>
+                    <div class="key key-alpha--1 ">{<br>[</div>
+                    <div class="key key-alpha--1 ">}<br>]</div>
+                    <div class="key key-alpha--1 ">|<br>\</div>
+                </div>
+                <div class="alpha--2">
+                    <div class="key key-alpha--2 CapsLock">CapsLock</div>
+                    <div class="key key-alpha--2">A</div>
+                    <div class="key key-alpha--2">S</div>
+                    <div class="key key-alpha--2">D</div>
+                    <div class="key key-alpha--2">F</div>
+                    <div class="key key-alpha--2">G</div>
+                    <div class="key key-alpha--2">H</div>
+                    <div class="key key-alpha--2">J</div>
+                    <div class="key key-alpha--2">K</div>
+                    <div class="key key-alpha--2">L</div>
+                    <div class="key key-alpha--2">:<br>;</div>
+                    <div class="key key-alpha--2">"<br>'</div>
+                    <div class="key key-alpha--2 Enter">Enter</div>
+                </div>
+                <div class="alpha--3">
+                    <div class="key key-alpha--3 shift">Shift</div>
+                    <div class="key key-alpha--3">Z</div>
+                    <div class="key key-alpha--3">X</div>
+                    <div class="key key-alpha--3">C</div>
+                    <div class="key key-alpha--3">V</div>
+                    <div class="key key-alpha--3">B</div>
+                    <div class="key key-alpha--3">N</div>
+                    <div class="key key-alpha--3">M</div>
+                    <div class="key key-alpha--3"><<br>,</div>
+                    <div class="key key-alpha--3">><br>.</div>
+                    <div class="key key-alpha--3">?<br>/</div>
+                    <div class="key key-alpha--3 shift">Shift</div>
+                </div>
+                <div class="other-key">
+                    <div class="key key-other">Ctrl</div>
+                    <div class="key key-other">Fn</div>
+                    <div class="key key-other">Win</div>
+                    <div class="key key-other">Alt</div>
+                    <div class="key key-other spaceBar"></div>
+                    <div class="key key-other">Alt</div>
+                    <div class="key key-other">Ctrl</div>
+                    <div class="key-other arrow">
+                        <div class="key key-arrow up"></div>
+                        <div class="key key-arrow down"></div>
+                        <div class="key key-arrow left"></div>
+                        <div class="key key-arrow right"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-side">
+               <div class="key num--key num-key--row-1 num--pgUp">PgUp</div>
+               <div class="key num--key num-key--row-1 num--pgDn">pgDn</div>
+               <div class="key num--key num-key--row-1 num--Home">Home</div>
+               <div class="key num--key num-key--row-1 num--End">End</div>
+               <div class="key num--key num--NumLock">NLock</div>
+               <div class="key num--key num--BackSlash">/</div>
+               <div class="key num--key num--Multi">*</div>
+               <div class="key num--key num--Sub">-</div>
+               <div class="key num--key num--7">7</div>
+               <div class="key num--key num--8">8</div>
+               <div class="key num--key num--9">9</div>
+               <div class="key num--key num--4">4</div>
+               <div class="key num--key num--5">5</div>
+               <div class="key num--key num--6">6</div>
+               <div class="key num--key num--1">1</div>
+               <div class="key num--key num--2">2</div>
+               <div class="key num--key num--3">3</div>
+               <div class="key num--key num--0">0</div>
+               <div class="key num--key num--dot">.</div>
+               <div class="key num--key num--Enter">Enter</div>
+               <div class="key num--key num--Add">+</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
